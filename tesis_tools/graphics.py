@@ -6,7 +6,7 @@ import numpy as np
 import matplotlib.dates as mdates
 
 
-def import_dat(file):
+def import_read(file):
     analisis = read_sql(file)
     nombres = {'Environment:Site Outdoor Air Drybulb Temperature (C)': 'To',
      'Environment:Site Outdoor Air Relative Humidity (%)': 'hr',
