@@ -8,7 +8,7 @@ setuptools.setup(
     version='0.1.0',
     author=['Jessica Nevárez Barrera'],
     author_email=["nebaje@ier.unam.mx"],
-    description='New Package for elaborate graphics,
+    description="New Package for elaborate graphics",
     long_description=long_description,
     long_description_content_type="text/markdown",
     packages=['tesis_tools'],
