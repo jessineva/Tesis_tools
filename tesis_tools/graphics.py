@@ -10,7 +10,7 @@ class graphics:
     def __init__(self):
         return (None)
         
-    def import_data(self, file):
+    def import_data(file):
         analisis = read_sql(file)
         nombres = {'Environment:Site Outdoor Air Drybulb Temperature (C)': 'To',
          'Environment:Site Outdoor Air Relative Humidity (%)': 'hr',
