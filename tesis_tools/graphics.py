@@ -6,6 +6,25 @@ import numpy as np
 import matplotlib.dates as mdates
 
 
+def import_dat(file):
+    analisis = read_sql(file)
+    nombres = {'Environment:Site Outdoor Air Drybulb Temperature (C)': 'To',
+     'Environment:Site Outdoor Air Relative Humidity (%)': 'hr',
+     'Environment:Site Wind Speed (m/s)': 'ws',
+     'Environment:Site Wind Direction (deg)': 'wd',
+     'THERMAL ZONE 1:Zone Mean Air Temperature (C)': 'Ti_THERMALZONE1',
+     'THERMAL ZONE 1:Zone Mean Air Humidity Ratio (kgWater/kgDryAir)': 'wi_THERMALZONE1',
+     'THERMAL ZONE 1:AFN Zone Infiltration Volume (m3)': "Infiltration_Volume",
+     'THERMAL ZONE 1:Zone Air Relative Humidity (%)': 'rhi_THERMALZONE1',
+     "THERMAL ZONE 1:Zone Outdoor Air Wind Speed (m/s)": "ws_zone",
+      "THERMAL ZONE 1:Zone Outdoor Air Wind Direction (deg)":"wd_zone",
+              }
+    analisis.rename(columns=nombres)
+    data =analisis.data
+    return data
+
+
+
 def graph_general(fecha1,timedelta,data, ylim, area = None):
     fecha1 = parse(fecha1)
     fecha2 = fecha1 + pd.Timedelta(timedelta)
